@@ -1,0 +1,62 @@
+.login-con {
+    margin-top: 25%;
+    h1 {
+        text-align: center;
+        border-bottom: 3px $roku-purple solid;
+        width: 35%;
+        text-transform: uppercase;
+        margin: 0 auto;
+        font-size: 12vw;
+        font-weight: 600;
+        color: white;
+    }
+
+    form {
+        div {
+            div {
+                display: flex;
+                flex-direction: column;
+                width: 80%;
+                margin: 10% auto;
+
+                label {
+                    display: none;
+                }
+
+                input {
+                    margin-top: 5%;
+                    border-bottom: 2px solid $roku-purple;
+                    border-top: none;
+                    border-left: none;
+                    border-right: none;
+                    font-size: 5.5vw;
+                    background-color: transparent;
+                    color: white;
+                }
+
+                input::placeholder {
+                    color: white;
+                    font-size: 5.5vw;
+                    text-transform: uppercase;
+                    letter-spacing: 0.5px;
+                    font-family: $heebo;
+                }
+
+                button {
+                    width: 50%;
+                    margin: 0 auto;
+                    padding: 4% 3%;
+                    background-color: $roku-purple;
+                    border: none;
+                    color: white;
+                    text-transform: uppercase;
+                    border-radius: 2vw;
+                    font-family: $heebo;
+                    font-size: 5.5vw;
+                    letter-spacing: 1px;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
