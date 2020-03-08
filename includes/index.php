@@ -14,3 +14,9 @@
     
         echo json_encode($users);
     }
+
+    if(isset($_GET["getAllMovies"])) {
+        $allMovies = getAllMovies($pdo);
+    
+        echo json_encode($allMovies);
+    }

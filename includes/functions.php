@@ -39,4 +39,22 @@
         return $resultUser;
     }
 
+    function getAllMovies($conn) {
+        // validate that the post method is working from out JS file
+
+        // echo $userame; 
+
+        $getAllMovies = 'SELECT * FROM movies ORDER BY year';
+        $runQuery = $conn->query($getAllMovies);
+
+        $resultMovies = array();
+
+        while($row = $runQuery->fetch(PDO::FETCH_ASSOC)) {
+            // push each row of data into our arry to make it easy to iterate over
+            $resultMovies[] = $row;
+        }
+
+        return $resultMovies;
+    }
+
 ?>
