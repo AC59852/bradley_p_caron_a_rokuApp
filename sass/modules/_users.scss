@@ -1,0 +1,20 @@
+.profileWrapper {
+    display: flex;
+    flex-direction: column;
+    div {
+        margin: 6% auto;
+        a {
+            text-align: center;
+            color: white;
+            text-decoration: none;
+            h2 {
+                margin-top: 3%;
+                font-size: 6vw;
+            }
+            img {
+                width: 70%;
+                margin: 0 auto;
+            }
+        }
+    }
+}
