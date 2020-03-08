@@ -1,23 +1,23 @@
 export default {
     template: `
         <div class="container">
-            <div class="login-con">
+            <div class="loginWrapper">
                 <h1 class="title">Login</h1>
                 
 
                 <form @submit.prevent="login">
-                    <div class="">
-                        <div class="">
-                            <label class="" for="inlineFormInputName">Username:</label>
-                            <input v-model="input.username" type="text" class="" id="inlineFormInputName" placeholder="Username:" required>
+                    <div class="inputCon">
+                        <div class="inputWrapper">
+                            <label class="userLabel" for="username">username</label>
+                            <input v-model="input.username" type="text" class="" id="username" placeholder="Username:" name="username" required>
                         </div>
 
-                        <div class="">
-                            <label class="" for="inlineFormPassword">Password:</label>
-                            <input v-model="input.password" type="password" class="" id="inlineFormPassword" placeholder="Password:" required>
+                        <div class="inputWrapper">
+                            <label class="passLabel" for="inlineFormPassword">Password:</label>
+                            <input v-model="input.password" type="password" class="" id="inlineFormPassword" name="password" placeholder="Password:" required>
                         </div>
 
-                        <div class="">
+                        <div class="btnWrapper">
                             <button type="submit" class="">Login</button>
                         </div>
                     </div>
