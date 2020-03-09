@@ -57,4 +57,22 @@
         return $resultMovies;
     }
 
+    function getKidsMovies($conn) {
+        // validate that the post method is working from out JS file
+
+        // echo $userame; 
+
+        $getKidsMovies = 'SELECT * FROM movies WHERE iskids = 1 ORDER BY year';
+        $runQuery = $conn->query($getKidsMovies);
+
+        $resultKidsMovies = array();
+
+        while($row = $runQuery->fetch(PDO::FETCH_ASSOC)) {
+            // push each row of data into our arry to make it easy to iterate over
+            $resultKidsMovies[] = $row;
+        }
+
+        return $resultKidsMovies;
+    }
+
 ?>

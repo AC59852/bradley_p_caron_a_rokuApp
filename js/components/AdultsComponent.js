@@ -4,6 +4,14 @@ import SingleMovieComponent from "./SingleMovieComponent.js";
 export default {
     template: `
     <div class="container">
+    <nav class="bottomNav">
+        <ul>
+            <li><img src="./images/home.svg"></li>
+            <li><img src="./images/movie.svg"></li>
+            <li><img src="./images/tv.svg"></li>
+            <li><img src="./images/music.svg"></li>
+        </ul>
+    </nav>
         <div class="">
             <div class="movieWrapper">
                 <movies v-for="movie in movies" :key="movie.id" :movies="movie"></movies>

@@ -7,6 +7,7 @@ export default {
 
     template: `
     <div class="movieContainer">
+        <h1>{{ movies.year }}</h1>
     <img :src="'images/' + movies.image + '.jpg'" alt="movie banner" class="movieImg"> 
         <h2>{{ movies.name }}</h2>
     </div>
