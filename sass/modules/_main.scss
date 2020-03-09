@@ -1,11 +1,18 @@
 .header {
+	width: 100%;
 	background-color: $roku-purple;
+	a {
 	display: flex;
 	justify-content: center;
-	img {
+		img {
 		width: 35%;
 		margin: 5% 0;
 	}
+}
+}
+
+nav {
+	display: flex;
 }
 
 body {

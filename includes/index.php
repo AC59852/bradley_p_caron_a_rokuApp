@@ -20,3 +20,11 @@
     
         echo json_encode($allMovies);
     }
+
+    if(isset($_GET["getKidsMovies"])) {
+        $KidsMovies = getKidsMovies($pdo);
+    
+        echo json_encode($KidsMovies);
+    }
+
+    
