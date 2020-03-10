@@ -6,13 +6,13 @@ export default {
     // if not, set it to /adults
 
     template: `
-    <div class="movieContainer">
+    <div class="movieContainer contentCon">
         <h1>{{ movies.year }}</h1>
     <img :src="'images/' + movies.image + '.jpg'" alt="movie banner" class="movieImg"> 
         <h2>{{ movies.name }}</h2>
     </div>
-    `  
-}
+    `,
 
+}
   
     
