@@ -42,7 +42,7 @@ export default {
     },
 
     components: {
-        // grab any profiles from singleuser component
+        // grab any profiles from singlemovie component
         movies: SingleMovieComponent
     }
 }

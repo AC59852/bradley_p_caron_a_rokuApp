@@ -1,8 +1,11 @@
-.movieWrapper {
+.wrapper {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     margin-top: 5%;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+    transition: display 0.5s linear 1s;
     div {
         display: flex;
         flex-direction: column;
@@ -50,4 +53,8 @@
             }
         }
     }
+}
+
+.test {
+    opacity: 0;
 }

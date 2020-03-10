@@ -6,18 +6,20 @@ export default {
     <div class="container">
     <nav class="bottomNav">
         <ul>
-            <li><img src="./images/home.svg"></li>
-            <li><img src="./images/movie.svg"></li>
-            <li><img src="./images/tv.svg"></li>
+            <li><a href="index.html#/users"><img src="./images/home.svg"></router-link><a></li>
+            <li class="test1"><img src="./images/movie.svg"></li>
+            <li class="test2"><img src="./images/tv.svg"></li>
             <li><img src="./images/music.svg"></li>
         </ul>
     </nav>
         <div class="">
-            <div class="movieWrapper">
-                <movies v-for="movie in movies" :key="movie.id" :movies="movie"></movies>
+            <div class=" wrapper movieWrapper">
+                <movies v-for="movie in movies" :name="movies.name" :key="movie.id" :movies="movie"
+                ></movies>
             </div>
         </div>
-    </div> 
+        </div>
+         
     `, 
 
     data: function() {
@@ -31,6 +33,17 @@ export default {
         this.fetchAllMovies();
     },
 
+    mounted() {
+    $(".test1").click(function() {
+        $('.wrapper').not(".movieWrapper").addClass("hidden");
+        $('.movieWrapper').removeClass("hidden");
+    });
+    $(".test2").click(function() {
+        $('.wrapper').not(".movieWrapper2").addClass("hidden");
+        $('.movieWrapper2').removeClass("hidden");
+    });
+    },
+
     methods: {
         fetchAllMovies() {
             let url = `./includes/index.php?getAllMovies=true`;
@@ -38,11 +51,13 @@ export default {
             .then(res => res.json())
             .then(data => {this.movies = data})
             .catch((err) => {console.error(err)})
-        }
+        },
+        
+
     },
 
     components: {
-        // grab any profiles from singleuser component
-        movies: SingleMovieComponent
+        // grab any profiles from singlemovie component
+        movies: SingleMovieComponent,
     }
 }
