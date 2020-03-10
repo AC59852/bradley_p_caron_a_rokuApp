@@ -38,8 +38,6 @@ export default {
 
     methods: {
         login() {
-            //console.log(this.$parent.mockAccount.username);
-            // debugger;
             if (this.input.username != "" && this.input.password != "") {
                 // use the FormData object to collect and send our params
                 let formData = new FormData();
