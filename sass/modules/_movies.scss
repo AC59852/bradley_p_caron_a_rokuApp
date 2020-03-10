@@ -3,9 +3,7 @@
     flex-wrap: wrap;
     justify-content: space-evenly;
     margin-top: 5%;
-    opacity: 1;
-    transition: opacity 0.5s ease-in-out;
-    transition: display 0.5s linear 1s;
+    overflow: hidden;
     div {
         display: flex;
         flex-direction: column;
@@ -39,6 +37,7 @@
         display: flex;
         width: 100%;
         justify-content: space-around;
+        transition: bottom 1s cubic-bezier(0.165, 0.84, 0.44, 1);
         li {
             width: 10%;
         }
@@ -55,6 +54,19 @@
     }
 }
 
-.test {
-    opacity: 0;
+.test2 {
+    animation: 3s revealCon ease-out;
+    animation-fill-mode: forwards;
+}
+
+
+@keyframes revealCon {
+    0% {height: 0 !important; opacity: 0;}
+    5% {height: 0!important; opacity: 0;}
+    99% {height: 100% !important;}
+    100% {height: 100% !important; opacity: 1;}
+}
+
+.lower {
+    bottom: -20% !important;
 }
