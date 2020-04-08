@@ -1,4 +1,6 @@
-import SingleMovieComponent from "./SingleMovieComponent.js";
+import VideoComponent from "./adultModules/VideoComponent.js";
+import AudioComponent from "./adultModules/AudioComponent.js";
+import TvComponent from "./adultModules/TvComponent.js";
 
 // loop through the profiles and render each one
 export default {
@@ -6,73 +8,49 @@ export default {
     <div class="container">
     <nav class="bottomNav">
         <ul>
-            <li><a href="index.html#/users"><img src="./images/home.svg"></router-link></a></li>
-            <li class="btn1"><img src="./images/movie.svg"></li>
-            <li class="btn2"><img src="./images/tv.svg"></li>
-            <li class="btn3"><img src="./images/music.svg"></li>
+            <li><a href="index.html#/profiles"><img src="./images/home.svg"></router-link></a></li>
+            <li @click="switchMovieComponent" class="btn1"><img src="./images/movie.svg"></li>
+            <li @click="switchTvComponent" class="btn2"><img src="./images/tv.svg"></li>
+            <li @click="switchAudioComponent" class="btn3"><img src="./images/music.svg"></li>
         </ul>
     </nav>
-        <div class="">
-            <div class="wrapper movieWrapper">
-                <movies v-for="movie in movies" :name="movies.name" :key="movie.id" :movies="movie"
-                ></movies>
-            </div>
-        </div>
-        <div class="">
-            <div class="hidden wrapper movieWrapper2">
-                <movies v-for="movie in movies" :name="movies.name" :key="movie.id" :movies="movie"
-                ></movies>
-            </div>
-        </div>
-        </div>
+           <component :is="activeComponent"></component>
         </div>
          
     `, 
 
-    data: function() {
+    data: function(){
         return {
-            movies: []
+            activeComponent: VideoComponent
         }
-    },
-
-    created: function() {
-        // render the profiles on the page
-        this.fetchAllMovies();
     },
 
     mounted() {
         let bottomNav = document.querySelector(".bottomNav ul")
     $(".btn1").click(function() {
-        $('.wrapper').not(".movieWrapper").addClass("hidden");
-        $('.movieWrapper').removeClass("hidden");
         $('.movieWrapper').addClass("test2");
         $('.movieWrapper').on("animationend", function () {
             $('.movieWrapper').removeClass("test2");
         });
     });
     $(".btn2").click(function() {
-        $('.wrapper').not(".movieWrapper2").addClass("hidden");
-        $('.movieWrapper2').removeClass("hidden");
-        $('.movieWrapper2').addClass("test2");
-        $('.movieWrapper2').one("animationend", function () {
+        $('.movieWrapper').addClass("test2");
+        $('.movieWrapper').one("animationend", function () {
             $('.movieWrapper2').removeClass("test2");
         });;
     });
     $(".btn3").click(function() {
-        $('.wrapper').not(".movieWrapper3").addClass("hidden");
-        $('.movieWrapper3').removeClass("hidden");
-        $('.movieWrapper3').addClass("test2");
-        $('.movieWrapper3').one("animationend", function () {
+        $('.movieWrapper').addClass("test2");
+        $('.movieWrapper').one("animationend", function () {
             $('.movieWrapper2').removeClass("test2");
         });;
     });
 
     window.addEventListener('wheel', function(event) {
         if (event.deltaY < 0) {
-            console.log('pulling up');
             bottomNav.classList.remove("lower");
         } else if (event.deltaY > 0) {
-            console.log('pushing down');
+
             bottomNav.classList.add("lower");
         }
     });
@@ -126,19 +104,14 @@ function touchMove(e) {
     },
 
     methods: {
-        fetchAllMovies() {
-            let url = `./includes/index.php?getAllMovies=true`;
-            fetch(url)
-            .then(res => res.json())
-            .then(data => {this.movies = data})
-            .catch((err) => {console.error(err)})
+        switchMovieComponent() {
+            this.activeComponent = VideoComponent;
         },
-        
-
-    },
-
-    components: {
-        // grab any profiles from singlemovie component
-        movies: SingleMovieComponent,
+        switchTvComponent() {
+            this.activeComponent = TvComponent;
+        },
+        switchAudioComponent() {
+            this.activeComponent = AudioComponent;
+        },
     }
 }

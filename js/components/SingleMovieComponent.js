@@ -8,7 +8,7 @@ export default {
     <img :src="'images/' + movies.image + '.jpg'" alt="movie banner" class="movieImg"> 
         <h2>{{ movies.name }}</h2>
     </div>
-    `,
+    `
 
 }
   

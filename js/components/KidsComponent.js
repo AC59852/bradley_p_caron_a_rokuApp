@@ -1,4 +1,6 @@
-import SingleMovieComponent from "./SingleMovieComponent.js";
+import KidsVideoComponent from "./kidsModules/KidsVideoComponent.js";
+import KidsTvComponent from "./kidsModules/KidsTvComponent.js";
+import KidsAudioComponent from "./kidsModules/KidsAudioComponent.js";
 
 // loop through the profiles and render each one
 export default {
@@ -7,72 +9,47 @@ export default {
     <nav class="bottomNav">
         <ul>
             <li><a href="index.html#/users"><img src="./images/home.svg"></router-link></a></li>
-            <li class="btn1"><img src="./images/movie.svg"></li>
-            <li class="btn2"><img src="./images/tv.svg"></li>
-            <li class="btn3"><img src="./images/music.svg"></li>
+            <li @click="switchVideoComponent" class="btn1"><img src="./images/movie.svg"></li>
+            <li @click="switchTvComponent" class="btn2"><img src="./images/tv.svg"></li>
+            <li @click="switchAudioComponent" class="btn3"><img src="./images/music.svg"></li>
         </ul>
     </nav>
-        <div class="">
-            <div class="wrapper movieWrapper">
-                <movies v-for="movie in movies" :name="movies.name" :key="movie.id" :movies="movie"
-                ></movies>
-            </div>
-        </div>
-        <div class="">
-            <div class="hidden wrapper movieWrapper2">
-                <movies v-for="movie in movies" :name="movies.name" :key="movie.id" :movies="movie"
-                ></movies>
-            </div>
-        </div>
-        </div>
+           <component :is="activeComponent"></component>
         </div>
          
     `, 
 
-    data: function() {
+    data: function(){
         return {
-            movies: []
+            activeComponent: KidsVideoComponent
         }
-    },
-
-    created: function() {
-        // render the profiles on the page
-        this.fetchKidsMovies();
     },
 
     mounted() {
         let bottomNav = document.querySelector(".bottomNav ul")
     $(".btn1").click(function() {
-        $('.wrapper').not(".movieWrapper").addClass("hidden");
-        $('.movieWrapper').removeClass("hidden");
         $('.movieWrapper').addClass("test2");
         $('.movieWrapper').on("animationend", function () {
             $('.movieWrapper').removeClass("test2");
         });
     });
     $(".btn2").click(function() {
-        $('.wrapper').not(".movieWrapper2").addClass("hidden");
-        $('.movieWrapper2').removeClass("hidden");
-        $('.movieWrapper2').addClass("test2");
-        $('.movieWrapper2').one("animationend", function () {
-            $('.movieWrapper2').removeClass("test2");
+        $('.movieWrapper').addClass("test2");
+        $('.movieWrapper').one("animationend", function () {
+            $('.movieWrapper').removeClass("test2");
         });;
     });
     $(".btn3").click(function() {
-        $('.wrapper').not(".movieWrapper3").addClass("hidden");
-        $('.movieWrapper3').removeClass("hidden");
-        $('.movieWrapper3').addClass("test2");
-        $('.movieWrapper3').one("animationend", function () {
-            $('.movieWrapper2').removeClass("test2");
+        $('.movieWrapper').addClass("test2");
+        $('.movieWrapper').one("animationend", function () {
+            $('.movieWrapper').removeClass("test2");
         });;
     });
 
     window.addEventListener('wheel', function(event) {
         if (event.deltaY < 0) {
-            console.log('pulling up');
             bottomNav.classList.remove("lower");
         } else if (event.deltaY > 0) {
-            console.log('pushing down');
             bottomNav.classList.add("lower");
         }
     });
@@ -126,19 +103,14 @@ function touchMove(e) {
     },
 
     methods: {
-        fetchKidsMovies() {
-            let url = `./includes/index.php?getKidsMovies=true`;
-            fetch(url)
-            .then(res => res.json())
-            .then(data => {this.movies = data})
-            .catch((err) => {console.error(err)})
+        switchVideoComponent() {
+            this.activeComponent = KidsVideoComponent;
         },
-        
-
-    },
-
-    components: {
-        // grab any profiles from singlemovie component
-        movies: SingleMovieComponent,
+        switchTvComponent() {
+            this.activeComponent = KidsTvComponent;
+        },
+        switchAudioComponent() {
+            this.activeComponent = KidsAudioComponent;
+        },
     }
 }

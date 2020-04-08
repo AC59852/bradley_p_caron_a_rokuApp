@@ -1,4 +1,4 @@
-import SingleUserComponent from "./SingleUserComponent.js";
+import SingleProfileComponent from "./SingleProfileComponent.js";
 
 // loop through the profiles and render each one
 export default {
@@ -35,6 +35,6 @@ export default {
 
     components: {
         // grab any profiles from singleuser component
-        profile: SingleUserComponent
+        profile: SingleProfileComponent
     }
 }
