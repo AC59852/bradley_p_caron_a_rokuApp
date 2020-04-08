@@ -5,7 +5,7 @@
        function getUsers($conn) {
            
 
-           $getData = 'SELECT t1.* FROM profiles t1, users t2 WHERE t1.username = t2.username';
+           $getData = 'SELECT t1.* FROM profiles t1, tbl_user t2 WHERE t1.username = t2.user_name';
 
            $runQuery = $conn->query($getData);
 
@@ -17,27 +17,6 @@
 
            return $result;
        }
-
-
-
-    function getUser($conn) {
-        // validate that the post method is working from out JS file
-        $username = $_POST['username'];
-
-        // echo $userame; 
-
-        $getUser = 'SELECT * FROM users WHERE username="'.$username.'"';
-        $runQuery = $conn->query($getUser);
-
-        $resultUser = array();
-
-        while($row = $runQuery->fetch(PDO::FETCH_ASSOC)) {
-            // push each row of data into our arry to make it easy to iterate over
-            $resultUser[] = $row;
-        }
-
-        return $resultUser;
-    }
 
     function getAllMovies($conn) {
         // validate that the post method is working from out JS file

@@ -5,6 +5,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta property="og:url"           content="http://rokuflashback.com/#/login" />
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="I just watched a new movie on Roku Flashback" />
+    <meta property="og:description"   content="I thought the movie was..." />
+    <meta property="og:image"         content="https://www.your-domain.com/path/image.jpg" />
   <title>Roku Flashback</title>
   <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
@@ -36,15 +41,14 @@
             <ul>
               <!-- <li>Kids</li> -->
               <!-- <li v-if="authenticated"><i class="fas fa-user-circle"></i></li> -->
-              <li><a href="index.html#/users"><img src="images/roku.svg" alt="Roku logo"></a></li>
+              <li><a href="index.html#/profiles"><img src="images/roku.svg" alt="Roku logo"></a></li>
               <!-- <li v-if="administrator"><i class="fas fa-cog"></i></li> -->
-              <!-- <li v-if="authenticated" v-on:click="logout()"><i class="fas fa-power-off"></i></li> -->
+              <li v-if="authenticated" v-on:click="logout()"><i class="fas fa-power-off"></i></li>
             </ul>
           </nav>
         </header>
       </div>
     </div> <!-- end container fluid -->
-
     <!-- first thing in component templates should be a container -->
     <router-view @authenticated="setAuthenticated"/>
   </main>

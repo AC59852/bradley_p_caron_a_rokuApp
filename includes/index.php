@@ -3,9 +3,8 @@
 
     if (isset($_GET['user'])) {
         $user = getUser($pdo);
-    
-    
-    echo json_encode($user);
+
+        echo json_encode($user);
     
     }
     
