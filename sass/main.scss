@@ -1,13 +1,15 @@
 @import '_vars';
+@import 'modules/_nav';
 @import 'modules/_users';
 @import 'modules/_movies';
+@import 'modules/_popup';
 @import 'modules/_main';
 @import 'modules/_footer';
 @import 'modules/_login';
 @import 'modules/mediaqueries';
 
 html {
-    font-family: $heebo;
+    font-family: Verdana, sans-serif;
 }
 
 .hidden {

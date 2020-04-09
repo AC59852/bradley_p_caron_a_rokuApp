@@ -1,18 +1,32 @@
 .header {
 	width: 100%;
 	background-color: $roku-purple;
-	a {
-	display: flex;
-	justify-content: center;
+	ul {
+		display: flex;
+		width: 100%;
 		img {
-		width: 35%;
-		margin: 5% 0;
+			width: 100%;
+		}
+		span {
+			display: flex;
+			margin-top: 5%;
+			margin-right: 5%;
+			li {
+				margin: 0 5%;
+				color: white;
+			}
+		}
+		li {
+			width: 100%;
+		}
+
+		a {
+			img {
+			width: 35%;
+			margin: 5% 0 5% 5%;
+		}
 	}
 }
-}
-
-nav {
-	display: flex;
 }
 
 body {

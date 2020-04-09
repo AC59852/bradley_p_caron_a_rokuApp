@@ -12,8 +12,45 @@ export default {
             <p v-html="currentMovie.description"></p>
         </div>
             <div class="wrapper movieWrapper">
-                <movies v-for="movie in movies" v-on:click.native="newInfo(movie)" :name="movies.name" :key="movie.id" :movies="movie"
+            <div class=" fifty">
+                <h1>'50s</h1>
+                <div class="decadeWrap">
+                <movies v-if="movie.decade==='1950'" v-for="movie in movies" v-on:click.native="newInfo(movie)" :name="movies.name" :key="movie.id" :movies="movie"
                 ></movies>
+                </div>
+                </div>
+
+                <div class="sixty">
+                <h1>'60s</h1>
+                <div class="decadeWrap">
+                <movies v-if="movie.decade==='1960'" v-for="movie in movies" v-on:click.native="newInfo(movie)" :name="movies.name" :key="movie.id" :movies="movie"
+                ></movies>
+                </div>
+                </div>
+
+                <div class="seventy">
+                <h1>'70s</h1>
+                <div class="decadeWrap">
+                <movies v-if="movie.decade==='1970'" v-for="movie in movies" v-on:click.native="newInfo(movie)" :name="movies.name" :key="movie.id" :movies="movie"
+                ></movies>
+                </div>
+                </div>
+
+                <div class="eighty">
+                <h1>'80s</h1>
+                <div class="decadeWrap">
+                <movies v-if="movie.decade==='1980'" v-for="movie in movies" v-on:click.native="newInfo(movie)" :name="movies.name" :key="movie.id" :movies="movie"
+                ></movies>
+                </div>
+                </div>
+
+                <div class="ninety">
+                <h1>'90s</h1>
+                <div class="decadeWrap">
+                <movies v-if="movie.decade==='1990'" v-for="movie in movies" v-on:click.native="newInfo(movie)" :name="movies.name" :key="movie.id" :movies="movie"
+                ></movies>
+                </div>
+                </div>
             </div>
         </div>
         </div>

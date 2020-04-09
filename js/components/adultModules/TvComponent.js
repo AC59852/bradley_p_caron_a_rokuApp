@@ -1,4 +1,4 @@
-import SingleMovieComponent from "../SingleMovieComponent.js";
+import SingleTvComponent from "../SingleTvComponent.js";
 
 // loop through the profiles and render each one
 export default {
@@ -6,14 +6,51 @@ export default {
     <div class="container">
         <div class="">
         <div class="dynamicBox">
-            <h4>{{currentMovie.name}}</h4>
-            <h4>{{currentMovie.year}}</h4>
-            <img :src="'images/' + currentMovie.image + '.jpg'">
-            <p v-html="currentMovie.description"></p>
+            <h4>{{currentShow.name}}</h4>
+            <h4>{{currentShow.year}}</h4>
+            <img :src="'images/' + currentShow.image + '.jpg'">
+            <p v-html="currentShow.description"></p>
         </div>
-            <div class="wrapper movieWrapper">
-                <movies v-for="movie in movies" v-on:click.native="newInfo(movie)" :name="movies.name" :key="movie.id" :movies="movie"
-                ></movies>
+            <div class="wrapper showWrapper">
+            <div class=" fifty">
+                <h1>'50s</h1>
+                <div class="decadeWrap">
+                <shows v-if="show.decade==='1950'" v-for="show in shows" v-on:click.native="newInfo(show)" :name="shows.name" :key="show.id" :shows="show"
+                ></shows>
+                </div>
+                </div>
+
+                <div class="sixty">
+                <h1>'60s</h1>
+                <div class="decadeWrap">
+                <shows v-if="show.decade==='1960'" v-for="show in shows" v-on:click.native="newInfo(show)" :name="shows.name" :key="show.id" :shows="show"
+                ></shows>
+                </div>
+                </div>
+
+                <div class="seventy">
+                <h1>'70s</h1>
+                <div class="decadeWrap">
+                <shows v-if="show.decade==='1970'" v-for="show in shows" v-on:click.native="newInfo(show)" :name="shows.name" :key="show.id" :shows="show"
+                ></shows>
+                </div>
+                </div>
+
+                <div class="eighty">
+                <h1>'80s</h1>
+                <div class="decadeWrap">
+                <shows v-if="show.decade==='1980'" v-for="show in shows" v-on:click.native="newInfo(show)" :name="shows.name" :key="show.id" :shows="show"
+                ></shows>
+                </div>
+                </div>
+
+                <div class="ninety">
+                <h1>'90s</h1>
+                <div class="decadeWrap">
+                <shows v-if="show.decade==='1990'" v-for="show in shows" v-on:click.native="newInfo(show)" :name="shows.name" :key="show.id" :shows="show"
+                ></shows>
+                </div>
+                </div>
             </div>
         </div>
         </div>
@@ -23,49 +60,48 @@ export default {
 
     data: function() {
         return {
-            movies: [],
-            currentMovie: {}
+            shows: [],
+            currentShow: {}
         }
     },
 
     created: function() {
         // render the profiles on the page
-        this.fetchAllMovies();
+        this.fetchAllShows();
     },
 
 
     methods: {
-        fetchAllMovies() {
+        fetchAllShows() {
+            
+            if(localStorage.getItem("cachedShows")) {
 
-            if(localStorage.getItem("cachedMovies")) {
+                this.shows = JSON.parse(localStorage.getItem("cachedShows"));
 
-                this.movies = JSON.parse(localStorage.getItem("cachedMovies"));
-
-                this.currentMovie =  this.movies[0];
+                this.currentShow =  this.shows[0];
 
             } else {
-                let url = `./includes/index.php?getAllMovies`;
+                let url = `./includes/index.php?getAllShows`;
             fetch(url)
             .then(res => res.json())
             .then(data => {
-                localStorage.setItem("cachedMovies", JSON.stringify(data));
+                localStorage.setItem("cachedShows", JSON.stringify(data));
 
-                this.movies = data;
-                this.currentMovie =  data[0];
+                this.shows = data;
+                this.currentShow =  data[0];
             })
             .catch((err) => {console.error(err)})
             }
-            
         },
 
         newInfo(info) {
-            this.currentMovie = info;
+            this.currentShow = info;
         }
 
     },
 
     components: {
         // grab any profiles from singlemovie component
-        movies: SingleMovieComponent,
+        shows: SingleTvComponent,
     }
 }

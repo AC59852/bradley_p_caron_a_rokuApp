@@ -1,4 +1,4 @@
-import SingleMovieComponent from "../SingleMovieComponent.js";
+import SingleAudioComponent from "../SingleAudioComponent.js";
 
 // loop through the profiles and render each one
 export default {
@@ -6,14 +6,41 @@ export default {
     <div class="container">
         <div class="">
         <div class="dynamicBox">
-            <h4>{{currentMovie.name}}</h4>
-            <h4>{{currentMovie.year}}</h4>
-            <img :src="'images/' + currentMovie.image + '.jpg'">
-            <p v-html="currentMovie.description"></p>
+            <h4>{{currentSong.name}}</h4>
+            <h4>{{currentSong.year}}</h4>
+            <img :src="'images/' + currentSong.image + '.jpg'">
+            <p v-html="currentSong.description"></p>
         </div>
-            <div class="wrapper movieWrapper">
-                <movies v-for="movie in movies" v-on:click.native="newInfo(movie)" :name="movies.name" :key="movie.id" :movies="movie"
-                ></movies>
+            <div class="wrapper songWrapper">
+            <div class="decadeWrap fifty">
+                <h1>50s</h1>
+                <songsComp v-if="song.decade==='1950'" v-for="song in songs" v-on:click.native="newInfo(song)" :name="songs.name" :key="song.id" :songs="song"
+                ></songsComp>
+                </div>
+
+                <div class="decadeWrap sixty">
+                <h1>60s</h1>
+                <songsComp v-if="song.decade==='1960'" v-for="song in songs" v-on:click.native="newInfo(song)" :name="songs.name" :key="song.id" :songs="song"
+                ></songsComp>
+                </div>
+
+                <div class="decadeWrap seventy">
+                <h1>70s</h1>
+                <songsComp v-if="song.decade==='1970'" v-for="song in songs" v-on:click.native="newInfo(song)" :name="songs.name" :key="song.id" :songs="song"
+                ></songsComp>
+                </div>
+
+                <div class="decadeWrap eighty">
+                <h1>80s</h1>
+                <songsComp v-if="song.decade==='1980'" v-for="song in songs" v-on:click.native="newInfo(song)" :name="songs.name" :key="song.id" :songs="song"
+                ></songsComp>
+                </div>
+
+                <div class="decadeWrap ninety">
+                <h1>90s</h1>
+                <songsComp v-if="song.decade==='1990'" v-for="song in songs" v-on:click.native="newInfo(song)" :name="songs.name" :key="song.id" :songs="song"
+                ></songsComp>
+                </div>
             </div>
         </div>
         </div>
@@ -23,49 +50,48 @@ export default {
 
     data: function() {
         return {
-            movies: [],
-            currentMovie: {}
+            songs: [],
+            currentSong: {}
         }
     },
 
     created: function() {
         // render the profiles on the page
-        this.fetchAllMovies();
+        this.fetchSongs();
     },
 
 
     methods: {
-        fetchAllMovies() {
+        fetchSongs() {
+            
+            if(localStorage.getItem("cachedMusic")) {
 
-            if(localStorage.getItem("cachedMovies")) {
+                this.songs = JSON.parse(localStorage.getItem("cachedMusic"));
 
-                this.movies = JSON.parse(localStorage.getItem("cachedMovies"));
-
-                this.currentMovie =  this.movies[0];
+                this.currentSong =  this.songs[0];
 
             } else {
-                let url = `./includes/index.php?getAllMovies`;
+                let url = `./includes/index.php?getAllMusic`;
             fetch(url)
             .then(res => res.json())
             .then(data => {
-                localStorage.setItem("cachedMovies", JSON.stringify(data));
+                localStorage.setItem("cachedMusic", JSON.stringify(data));
 
-                this.movies = data;
-                this.currentMovie =  data[0];
+                this.songs = data;
+                this.currentSong =  data[0];
             })
             .catch((err) => {console.error(err)})
             }
-            
         },
 
         newInfo(info) {
-            this.currentMovie = info;
+            this.currentsong = info;
         }
 
     },
 
     components: {
-        // grab any profiles from singlemovie component
-        movies: SingleMovieComponent,
+        // grab any profiles from singlesong component
+        songsComp: SingleAudioComponent,
     }
 }

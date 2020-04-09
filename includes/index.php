@@ -20,10 +20,35 @@
         echo json_encode($allMovies);
     }
 
+    if(isset($_GET["getAllMusic"])) {
+        $allMusic = getAllMusic($pdo);
+    
+        echo json_encode($allMusic);
+    }
+
+    if(isset($_GET["getAllShows"])) {
+        $allShows = getAllShows($pdo);
+    
+        echo json_encode($allShows);
+    }
+
     if(isset($_GET["getKidsMovies"])) {
         $KidsMovies = getKidsMovies($pdo);
     
         echo json_encode($KidsMovies);
     }
+
+    if(isset($_GET["getKidsMusic"])) {
+        $KidsMusic = getKidsMusic($pdo);
+    
+        echo json_encode($KidsMusic);
+    }
+
+    if(isset($_GET["getKidsShows"])) {
+        $KidsShows = getKidsShows($pdo);
+    
+        echo json_encode($KidsShows);
+    }
+
 
     

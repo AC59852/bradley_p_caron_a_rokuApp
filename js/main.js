@@ -45,7 +45,7 @@ import LoginFailComponent from "./components/LoginFailComponent.js";
         this.authenticated = status;
         // handle implicit type coercion (bad, bad part of JS)
         // turn our admin 1 or 0 back into a number
-        this.administrator = parseInt(data.isadmin);
+        this.administrator = parseInt(data.admin);
         this.user = data;
       },
 
@@ -59,6 +59,22 @@ import LoginFailComponent from "./components/LoginFailComponent.js";
 
         if(localStorage.getItem("cachedMovies")) {
           localStorage.removeItem("cachedMovies");
+        }
+
+        if(localStorage.getItem("cachedShows")) {
+          localStorage.removeItem("cachedShows");
+        }
+
+        if(localStorage.getItem("cachedShows2")) {
+          localStorage.removeItem("cachedShows2");
+        }
+
+        if(localStorage.getItem("cachedsongs")) {
+          localStorage.removeItem("cachedsongs");
+        }
+
+        if(localStorage.getItem("cachedsongs2")) {
+          localStorage.removeItem("cachedsongs2");
         }
 
         if(localStorage.getItem("cachedMovies2")) {

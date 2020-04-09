@@ -10,18 +10,47 @@ export default {
             <h4>{{currentMovie.year}}</h4>
             <img :src="'images/' + currentMovie.image + '.jpg'">
             <p v-html="currentMovie.description"></p>
-            <div id="fb-root"></div>
-            <div class="fb-share-button"
-                :href="'http://www.rokuflashback.com/' + currentMovie.name " 
-                data-layout="button">
-            </div>
-            </div>
-            <a class="twitter-share-button"
-            :href="'https://twitter.com/intent/tweet?text=Just Finished Watching ' + currentMovie.name + ' on Roku Flashback.'">
-            Tweet</a>
+        </div>
             <div class="wrapper movieWrapper">
-                <movies v-for="movie in movies" v-on:click.native="newInfo(movie)" :name="movies.name" :key="movie.id" :movies="movie"
+            <div class=" fifty">
+                <h1>'50s</h1>
+                <div class="decadeWrap">
+                <movies v-if="movie.decade==='1950'" v-for="movie in movies" v-on:click.native="newInfo(movie)" :name="movies.name" :key="movie.id" :movies="movie"
                 ></movies>
+                </div>
+                </div>
+
+                <div class="sixty">
+                <h1>'60s</h1>
+                <div class="decadeWrap">
+                <movies v-if="movie.decade==='1960'" v-for="movie in movies" v-on:click.native="newInfo(movie)" :name="movies.name" :key="movie.id" :movies="movie"
+                ></movies>
+                </div>
+                </div>
+
+                <div class="seventy">
+                <h1>'70s</h1>
+                <div class="decadeWrap">
+                <movies v-if="movie.decade==='1970'" v-for="movie in movies" v-on:click.native="newInfo(movie)" :name="movies.name" :key="movie.id" :movies="movie"
+                ></movies>
+                </div>
+                </div>
+
+                <div class="eighty">
+                <h1>'80s</h1>
+                <div class="decadeWrap">
+                <movies v-if="movie.decade==='1980'" v-for="movie in movies" v-on:click.native="newInfo(movie)" :name="movies.name" :key="movie.id" :movies="movie"
+                ></movies>
+                </div>
+                </div>
+
+                <div class="ninety">
+                <h1>'90s</h1>
+                <div class="decadeWrap">
+                <movies v-if="movie.decade==='1990'" v-for="movie in movies" v-on:click.native="newInfo(movie)" :name="movies.name" :key="movie.id" :movies="movie"
+                ></movies>
+                </div>
+                </div>
             </div>
         </div>
         </div>
@@ -39,21 +68,12 @@ export default {
     created: function() {
         // render the profiles on the page
         this.fetchAllMovies();
-
-        (function(d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
-            js = d.createElement(s); js.id = id;
-            js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
-            fjs.parentNode.insertBefore(js, fjs);
-          }(document, 'script', 'facebook-jssdk'));
-        
     },
 
 
     methods: {
         fetchAllMovies() {
-
+            
             if(localStorage.getItem("cachedMovies")) {
 
                 this.movies = JSON.parse(localStorage.getItem("cachedMovies"));
@@ -72,7 +92,6 @@ export default {
             })
             .catch((err) => {console.error(err)})
             }
-            
         },
 
         newInfo(info) {
@@ -84,6 +103,5 @@ export default {
     components: {
         // grab any profiles from singlemovie component
         movies: SingleMovieComponent,
-
     }
 }

@@ -4,9 +4,10 @@ export default {
 
     template: `
     <div class="movieContainer contentCon">
-        <h1>{{ movies.year }}</h1>
+    <div class="imgDiv">
     <img :src="'images/' + movies.image + '.jpg'" alt="movie banner" class="movieImg"> 
-        <h2>{{ movies.name }}</h2>
+    </div>
+        <h3>{{ movies.name }}</h3>
     </div>
     `
 
