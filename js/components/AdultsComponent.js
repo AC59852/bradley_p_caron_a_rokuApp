@@ -5,7 +5,7 @@ import TvComponent from "./adultModules/TvComponent.js";
 // loop through the profiles and render each one
 export default {
     template: `
-    <div class="container">
+    <div class="mainContainer">
     <nav class="bottomNav">
         <ul>
             <li><a href="index.html#/profiles"><img src="./images/home.svg"></router-link></a></li>

@@ -72,7 +72,7 @@ export default {
                 </div>
                 </div>
 
-                <div id="ninety" class="kidsNinety ninety">
+                <div id="ninety" class="kidsDec ninety">
                 <h1>'90s</h1>
                 <div class="decadeWrap">
                 <movies v-if="movie.decade==='1990'" v-for="movie in movies" v-on:click.native="newInfo(movie); showContent()" :name="movies.name" :key="movie.id" :movies="movie"
