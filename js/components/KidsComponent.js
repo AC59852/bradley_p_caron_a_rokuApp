@@ -5,7 +5,7 @@ import KidsAudioComponent from "./kidsModules/KidsAudioComponent.js";
 // loop through the profiles and render each one
 export default {
     template: `
-    <div class="container">
+    <div class="container kidsCon">
     <nav class="bottomNav">
         <ul>
             <li><a href="index.html#/profiles"><img src="./images/home.svg"></router-link></a></li>
@@ -26,7 +26,8 @@ export default {
     },
 
     mounted() {
-        let bottomNav = document.querySelector(".bottomNav ul")
+
+        let bottomNav = document.querySelector(".bottomNav")
     $(".btn1").click(function() {
         $('.contentCon').addClass("test2");
         $('.contentCon').on("animationend", function () {

@@ -7,7 +7,7 @@
         color: white;
         margin-top: 5%;
         margin-bottom: 6%;
-        margin-left: 10%;
+        margin-left: 5%;
         font-weight: bold;
     }
 
@@ -15,6 +15,7 @@
         display: flex;
         width: 100%;
         overflow: scroll;
+        overflow-y: hidden;
     }
     .contentCon {
         display: flex;
@@ -34,22 +35,23 @@
 .imgDiv {
 
     img {
-        width: 40vw;
+        width: 36vw;
     }
 }
 
 .bottomNav {
-    ul {
         z-index: 99999;
         border-top: 1px solid $roku-purple;
         background-color: #202020;
         padding: 3% 0;
         position: fixed;
         bottom: 0;
-        display: flex;
         width: 100%;
-        justify-content: space-around;
         transition: bottom 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+        ul {
+            display: flex;
+            justify-content: space-around;
+
         li {
             width: 10%;
         }
@@ -81,4 +83,31 @@
 
 .lower {
     bottom: -20% !important;
+}
+
+.filterNav {
+    display: flex;
+    color: $roku-purple;
+    margin-left: 2%;
+    padding-top: 4%;
+    h3 {
+        font-size: 4.6vw;
+    }
+
+    ul {
+        margin-left: 1%;
+        display: flex;
+
+        li {
+            margin: 0 4% 0;
+            a {
+                font-size: 4vw;
+                background-color: $roku-purple;
+                color: white;
+                text-decoration: none;
+                padding: 15% 15%;
+                font-weight: bold;
+            }
+        }
+    }
 }

@@ -32,3 +32,35 @@
 body {
 	background-color: $bck;
 }
+
+.kidsCon {
+	background-color: #ecd7fc;
+}
+
+.kidsDec {
+	h1 {
+		color: $roku-purple;
+	}
+
+	h3 {
+		color: $roku-purple;
+	}
+}
+
+.kidsBox {
+	background-color: #ecd7fc;
+
+	.dynWrap {
+		h4 {
+			color: $roku-purple;
+		}
+
+		.dynPara {
+			p {
+				color: $roku-purple;
+				border-top-color: $roku-purple;
+				border-bottom-color: $roku-purple;
+			}
+		}
+	}
+}

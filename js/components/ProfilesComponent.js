@@ -4,8 +4,8 @@ import SingleProfileComponent from "./SingleProfileComponent.js";
 export default {
     template: `
     <div class="container">
-        <div class="">
-            <div class="profileWrapper">
+        <div class="profileCon">
+            <div class="profileWrap">
                 <profile v-for="profile in profiles" :key="profile.id" :profile="profile"></profile>
             </div>
         </div>
