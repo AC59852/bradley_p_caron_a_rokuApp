@@ -1,162 +1,315 @@
-@media screen and (min-width: 768px) {
-    .profileWrapper {
-        flex-direction: row;
-        flex-wrap: wrap;
-        div {
-            width: 50%;
-            a {
-                display: flex;
-                flex-direction: column;
-                h2 {
-                    font-size: 4.6vw;
-                }
-                img {
-                    width: 72%;
-                }
-            }
-        }
-    }
-    .header {
-        a {
-            img {
-                width: 19%;
-                margin: 3% 0;
-            }
-        }
-    }
+@media screen and (min-width: 414px) {
     .loginWrapper {
-        margin-top: 7%;
         h1 {
-            font-size: 7.3vw;
-            width: 21%;
+            font-size: 11vw;
+            width: 44%;
         }
+
         form {
             div {
                 div {
-                    width: 50%;
-                    margin: 8% auto;
-                    input {
-                        font-size: 3.6vw;
-                    }
-                    input::placeholder {
-                        font-size: 3.6vw;
-                    }
                     button {
-                        font-size: 3.5vw;
-                        width: 50%;
-                        padding: 3% 3%;
-                        border-radius: 1.3vw;
+                        padding: 3% 3% 2.5%;
                     }
                 }
-            }
-        }
-    }
-    
-    
-    .loginWrapper h1, .loginWrapper form div div input {
-        border-bottom-width: 4px;
-    }
-
-    footer {
-        p {
-            margin-top: 20%;
-            font-size: 3vw;
-        }
-    }
-
-    .bottomNav {
-        ul {
-            justify-content: space-evenly;
-            padding: 1.5% 0;
-            border-top-width: 5px;
-            li {
-                width: 7%;
-                margin: 0 -10%;
-                img {
-                    width: 110%;
-                }
-            }
-            li:nth-child(2) img {
-                margin-top: 25%;
-            }
-            li:nth-child(3) img {
-                margin-top: 15%;
-            }
-        }
-    }
-
-    .wrapper {
-        div {
-            width: 29%;
-            img {
-                width: 94%;
-            }
-            h1, h2 {
-                font-size: 3vw;
-                line-height: 4vw;
-            }
-            h2 {
-                margin-top: 8%;
-                margin-bottom: 15%;
             }
         }
     }
 }
 
+@media screen and (min-width: 768px) {
 
-
-
-@media screen and (min-width: 1024px) {
-
-    .bottomNav {
+    .header {
         ul {
-            justify-content: space-evenly;
-            padding: 1% 0;
-            border-top-width: 5px;
             li {
-                width: 5%;
-                margin: 0 -18%;
-                img {
-                    width: 110%;
+                a {
+                    img {
+                        width: 18%;
+                        margin: 2% 0 2% 3%;
+                    }
                 }
             }
-            li:nth-child(2) img {
-                margin-top: 25%;
+        }
+
+        div {
+            img {
+                width: 3%;
+                margin-top: -6.5%;
+                margin-right: 1%;
             }
-            li:nth-child(3) img {
-                margin-top: 15%;
+        }
+    }
+
+    .loginWrapper {
+        h1 {
+            font-size: 9vw;
+            width: 38%;
+            border-bottom: 5px solid $roku-purple;
+        }
+        form {
+            div {
+                div {
+                    width: 65%;
+                    input {
+                        margin-top: 10%;
+                        font-size: 5vw;
+                        text-align: center;
+                        border-bottom: 6px solid $roku-purple;
+
+                        &::placeholder {
+                            font-size: 5vw;
+                        }
+                    }
+                    button {
+                        width: 38%;
+                        font-size: 3.5vw;
+                        border-radius: 1vw;
+                    }
+                }
+            }
+        }
+    }
+
+    .profileWrap {
+        flex-direction: row;
+        flex-wrap: wrap;
+        div {
+            width: 34%;
+
+            a {
+                img {
+                    width: 100%;
+                    display: flex;
+                }
+
+                h2 {
+                    font-size: 5vw;
+                }
             }
         }
     }
 
     .wrapper {
-        div {
-            width: 22%;
-            img {
-                width: 99%;
-            }
-            h1, h2 {
+        h1 {
+            font-size: 6vw;
+        }
+        .contentCon {
+            margin-right: 1%;
+            h3 {
                 font-size: 2vw;
-                line-height: 3vw;
-            }
-            h2 {
-                margin-top: 8%;
-                margin-bottom: 15%;
             }
         }
     }
 
-    .profileWrapper {
+    .imgDiv {
+        img {
+            width: 24vw;
+        }
+    }
+
+    .bottomNav {
+        border-top-width: 3px;
+        padding: 1% 0;
+        ul {
+            width: 50%;
+            margin: 0 auto;
+            li {
+                width: 13%;
+            }
+        }
+    }
+
+    .dynamicBox {
+        h4 {
+            font-size: 5vw;
+        }
+        .dynClose {
+            font-size: 3vw;
+            left: 89%;
+            top: 3.5%;
+            padding: 1% 1.8%;
+        }
+
+        img {
+            width: 40%;
+        }
+
+        p {
+            font-size: 3vw;
+            line-height: 4vw;
+        }
+    }
+
+    .filterNav {
+        width: 60%;
+        margin-left: auto;
+
+        h3 {
+            font-size: 2.6vw;
+        }
+
+        ul {
+            li {
+                a {
+                    font-size: 2.6vw;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 834px) {
+
+    .loginWrapper {
+      margin-top: 15%;
+        form {
+            div {
+                div {
+                    width: 58%;
+                    button {
+                        font-size: 3vw;
+                        padding: 2.5% 3% 1.7%;
+                        margin: 7% auto 0;
+                    }
+                }
+            }
+        }
+    }
+
+    footer {
+        margin-top: 20%;
+        p {
+            font-size: 3vw;
+        }
+    }
+
+}
+
+@media screen and (min-width: 1024px) {
+    .profileCon {
+        width: 79%;
+        margin: 0 auto;
+    }
+
+    .profileWrap {
         div {
             width: 33%;
-            a {
-                display: flex;
-                flex-direction: column;
-                h2 {
-                    font-size: 3vw;
+            margin: 17% auto 5%;
+        }
+    }
+
+    .imgDiv {
+        img {
+            width: 20vw;
+        }
+    }
+
+    .wrapper {
+        h1 {
+            margin-top: 10%;
+            margin-bottom: 3%;
+        }
+        .contentCon {
+            h3 {
+                font-size: 1.5vw;
+            }
+        }
+    }
+
+    .bottomNav {
+        ul {
+            width: 37%;
+        }
+    }
+}
+
+@media screen and (min-width: 1366px) {
+    .loginWrapper {
+        margin-top: 7%;
+        h1 {
+            font-size: 7.5vw;
+            width: 29%;
+            border-bottom: 6px solid $roku-purple;
+            margin-bottom: 10%;
+        }
+
+        form {
+            div {
+                div {
+                    width: 45%;
+                    margin-top: 5%;
+                    input {
+                        font-size: 3.5vw;
+                        margin-top: 2%;
+
+                        &::placeholder {
+                            font-size: 3.5vw;
+                        }
+                    }
+
+                    
+                    button {
+                        margin-top: 0;
+                    }
                 }
+            }
+        }
+    }
+
+    .profileWrap {
+        div {
+            a {
+                h2 {
+                    font-size: 3.5vw;
+                }
+            }
+        }
+    }
+
+    .dynamicBox {
+
+        .dynClose {
+            font-size: 2vw;
+            left: 93%;
+            top: 3.5%;
+            padding: 0.3% 0.9% 0.4%;
+        }
+
+        .dynWrap {
+            display: flex;
+            padding-top: 0;
+            justify-content: space-evenly;
+            h4 {
+                font-size: 3vw;
+                margin-top: 0;
+            }
+            .dynImgWrap {
+                width: 44%;
                 img {
-                    width: 66%;
+                    width: 75%;
+                }
+            }
+            .dynPara {
+                width: 56%;
+                margin-top: 12%;
+                p {
+                    font-size: 2vw;
+                    line-height: 3.3vw;
+                }
+            }
+        }
+    }
+
+    .filterNav {
+        width: 38%;
+        h3 {
+            font-size: 1.6vw;
+        }
+
+        ul {
+            li {
+                a {
+                    font-size: 1.6vw;
                 }
             }
         }
@@ -164,140 +317,138 @@
 }
 
 @media screen and (min-width: 1440px) {
-    .wrapper {
-        div {
-            width: 19%;
-            img {
-                width: 90%;
-            }
-            h1, h2 {
-                font-size: 1.7vw;
-                line-height: 2vw;
-            }
-            h2 {
-                margin-top: 8%;
-                margin-bottom: 19%;
-            }
-        }
-    }
-
-    .bottomNav {
-        ul {
-            justify-content: space-evenly;
-            padding: 1% 0;
-            border-top-width: 4px;
-            li {
-                width: 3%;
-                margin: 0 -26%;
-                img {
-                    width: 130%;
-                }
-            }
-            li:nth-child(2) img {
-                margin-top: 25%;
-            }
-            li:nth-child(3) img {
-                margin-top: 15%;
-            }
-        }
-    }
-
-    .header {
-        a {
-            img {
-                width: 15%;
-                margin: 1% 0;
-            }
-        }
-    }
     .loginWrapper {
-        margin-top: 7%;
-        h1 {
-            font-size: 6vw;
-            width: 18%;
-        }
+
         form {
             div {
                 div {
                     width: 40%;
-                    margin: 5% auto;
-                    input {
-                        font-size: 3vw;
-                    }
-                    input::placeholder {
-                        font-size: 3vw;
-                    }
+
                     button {
-                        font-size: 2.5vw;
-                        width: 50%;
-                        padding: 2% 3%;
-                        border-radius: 1.3vw;
+                        font-size: 2vw;
                     }
                 }
             }
         }
     }
-    
-    
-    .loginWrapper h1, .loginWrapper form div div input {
-        border-bottom-width: 6px;
+
+    footer {
+        margin-top: 10%;
+    }
+
+    .imgDiv {
+        img {
+            width: 19vw;
+        }
+    }
+
+    .wrapper {
+        h1 {
+            margin-top: 6%;
+            margin-bottom: 1%;
+            font-size: 5vw;
+            margin-left: 1%;
+        }
+        .contentCon {
+            margin-right: 0;
+            h3 {
+                font-size: 1.2vw;
+                margin: 2% auto;
+            }
+        }
+    }
+
+    .bottomNav {
+        ul {
+            width: 28%;
+        }
+    }
+
+    .dynamicBox {
+
+        .dynWrap {
+            h4 {
+                font-size: 2.5vw;
+            }
+            .dynImgWrap {
+                width: 50%;
+                img {
+                    width: 53%;
+                }
+            }
+
+            .dynPara {
+                p {
+                    font-size: 1.6vw;
+                    line-height: 2.4vw;
+                }
+            }
+        }
     }
 
 }
 
-@media screen and (min-width: 1800px) {
-    .bottomNav {
-        ul {
-            justify-content: space-evenly;
-            padding: 1% 0;
-            border-top-width: 4px;
-            li {
-                width: 3%;
-                margin: 0 -34%;
-                img {
-                    width: 100%;
-                }
-            }
-            li:nth-child(2) img {
-                margin-top: 25%;
-            }
-            li:nth-child(3) img {
-                margin-top: 15%;
-            }
-        }
-    }
-
-    .header {
-        a {
-            img {
-                width: 12%;
-            }
-        }
-    }
+@media screen and (min-width: 1680px) {
     .loginWrapper {
+        margin-top: 9%;
         h1 {
-            font-size: 5vw;
-            width: 15%;
+            font-size: 6vw;
+            width: 24%;
+            margin-bottom: 2%;
         }
+
         form {
             div {
                 div {
-                    width: 35%;
-                    margin: 4% auto;
+                    width: 34%;
+                    margin-top: 5%;
+                    margin-bottom: 7%;
+
                     input {
-                        font-size: 2vw;
-                    }
-                    input::placeholder {
-                        font-size: 2vw;
-                    }
-                    button {
-                        font-size: 1.8vw;
-                        width: 40%;
-                        border-radius: 0.6vw;
+                        font-size: 2.5vw;
+
+                        &::placeholder {
+                            font-size: 2.5vw;
+                        }
                     }
                 }
             }
         }
     }
 
+    footer {
+        p {
+            font-size: 1.5vw;
+        }
+    }
 }
+
+@media screen and (min-width: 1900px) {
+    .loginWrapper {
+        form {
+            div {
+                div {
+                    button {
+                        font-size: 1.5vw;
+                        width: 30%;
+                        border-radius: 0.5vw;
+                    }
+                }
+            }
+        }
+    }
+
+    .imgDiv {
+        img {
+            width: 15vw;
+        }
+    }
+
+    .wrapper {
+        .contentCon {
+            h3 {
+                font-size: 1vw;
+            }
+        }
+    }
+} 

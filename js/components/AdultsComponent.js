@@ -9,9 +9,9 @@ export default {
     <nav class="bottomNav">
         <ul>
             <li><a href="index.html#/profiles"><img src="./images/home.svg"></router-link></a></li>
-            <li @click="switchMovieComponent" class="btn1"><img src="./images/movie.svg"></li>
-            <li @click="switchTvComponent" class="btn2"><img src="./images/tv.svg"></li>
-            <li @click="switchAudioComponent" class="btn3"><img src="./images/music.svg"></li>
+            <li @click="switchMovieComponent" class="bottomBtn btn1"><img src="./images/movie.svg"></li>
+            <li @click="switchTvComponent" class="bottomBtn btn2"><img src="./images/tv.svg"></li>
+            <li @click="switchAudioComponent" class="bottomBtn btn3"><img src="./images/music.svg"></li>
         </ul>
     </nav>
            <component :is="activeComponent"></component>
@@ -26,24 +26,13 @@ export default {
     },
 
     mounted() {
-        let bottomNav = document.querySelector(".bottomNav ul")
-    $(".btn1").click(function() {
-        $('.movieWrapper').addClass("test2");
-        $('.movieWrapper').on("animationend", function () {
-            $('.movieWrapper').removeClass("test2");
+        
+        let bottomNav = document.querySelector(".bottomNav")
+    $(".bottomBtn").click(function() {
+        $('.wrapper').addClass("test2");
+        $('.wrapper').on("animationend", function () {
+            $('.wrapper').removeClass("test2");
         });
-    });
-    $(".btn2").click(function() {
-        $('.movieWrapper').addClass("test2");
-        $('.movieWrapper').one("animationend", function () {
-            $('.movieWrapper2').removeClass("test2");
-        });;
-    });
-    $(".btn3").click(function() {
-        $('.movieWrapper').addClass("test2");
-        $('.movieWrapper').one("animationend", function () {
-            $('.movieWrapper2').removeClass("test2");
-        });;
     });
 
     window.addEventListener('wheel', function(event) {

@@ -5,11 +5,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta property="og:url"           content="http://rokuflashback.com/#/login" />
-    <meta property="og:type"          content="website" />
-    <meta property="og:title"         content="I just watched a new movie on Roku Flashback" />
-    <meta property="og:description"   content="I thought the movie was..." />
-    <meta property="og:image"         content="https://www.your-domain.com/path/image.jpg" />
   <title>Roku Flashback</title>
   <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
@@ -40,11 +35,12 @@
           <nav class="">
             <ul>
               <!-- <li>Kids</li> -->
-              <!-- <li v-if="authenticated"><i class="fas fa-user-circle"></i></li> -->
               <li><a href="index.html#/profiles"><img src="images/roku.svg" alt="Roku logo"></a></li>
-              <!-- <li v-if="administrator"><i class="fas fa-cog"></i></li> -->
-              <li v-if="authenticated" v-on:click="logout()"><i class="fas fa-power-off"></i></li>
             </ul>
+            <div>
+              <img src="images/profile.svg" alt="profile icon">
+              <img v-on:click="logout()" src="images/logout.svg" alt="logout button">
+            </div>
           </nav>
         </header>
       </div>
@@ -59,9 +55,7 @@
     </p>
   </footer>
 
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
     integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
     crossorigin="anonymous"></script>

@@ -1,0 +1,72 @@
+.dynamicBox {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: -100%;
+    bottom: 0;
+    background-color: #191919;
+    color: white;
+    z-index: 99999;
+    transition: right 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+
+    .dynClose {
+        color: red;
+        border: solid 2px red;
+        border-radius: 100%;
+        font-size: 6vw;
+        position: relative;
+        left: 85%;
+        top: 1.5%;
+        padding: 1% 2.5% 1.5%;
+        cursor: pointer;
+    }
+    h4 {
+        text-align: center;
+        margin-top: 5%;
+        font-size: 7vw;
+    }
+    img {
+        width: 60%;
+        margin: 3% auto;
+        display: flex;
+    }
+
+    p {
+        width: 75%;
+        margin: 5% auto 13%;
+        font-size: 4.5vw;
+        line-height: 5vw;
+        padding: 4%;
+        border-top: 2px solid white;
+        border-bottom: 2px solid white;
+    }
+
+    .dynWrap {
+        overflow-y: scroll;
+        height: 100%;
+        padding-top: 5%;
+    }
+
+    .dynPara {
+        margin-bottom: 15%;
+        .socialBtns {
+            display: flex;
+            justify-content: space-evenly;
+            width: 50%;
+            margin: 3% auto 0;
+            .twitter-share-button {
+                padding: 5px 14px 3px;
+                background-color: #00acee;
+                border-radius: 4px;
+                a {
+                    color: white;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+
+.dynPopin {
+    right: 0 !important;
+}
