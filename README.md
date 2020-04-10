@@ -1,5 +1,5 @@
-![Roku Flashback](images/roku_logo.svg)
-# Roku Flashback)
+![Roku Flashback](images/roku_logo_purple.svg)
+# Roku Flashback
 
 ## Introduction
 Thanks for checking us out, we're the authors behind Roky Flashback
