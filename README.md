@@ -2,7 +2,7 @@
 # Roku Flashback
 
 ## Introduction
-Thanks for checking us out, we're the authors behind Roky Flashback
+Thanks for checking us out, we're the authors behind Roku Flashback
 <br>
 Here you will find all of the files we used to create this site.
 
@@ -43,10 +43,15 @@ Password: admin
 
 ### Tools Used
 **Visual Studio Code** - For coding the site and making everything work smoothly
+<br>
 **Adobe Photoshop** - For manipulating the images on the page
+<br>
 **Adobe Illustrator** - For creating the vector images as well as logo
+<br>
 **MySQL** - For creating dynamic database driven content
+<br>
 **PHP** - For running the register/login query
+<br>
 **Vue.js** - For creating the components and view models seen on the screen
 
 ### Authors
