@@ -40,7 +40,7 @@ export default {
             </div>
         </div>
             <div class="wrapper showWrapper">
-            <div id="fifty" class="fifty">
+            <div id="fifty" class="kidsDec fifty">
                 <h1>'50s</h1>
                 <div class="decadeWrap">
                 <shows v-if="show.decade==='1950'" v-for="show in shows" v-on:click.native="newInfo(show); showContent()" :name="shows.name" :key="show.id" :shows="show"
@@ -48,7 +48,7 @@ export default {
                 </div>
                 </div>
 
-                <div id="sixty" class="sixty">
+                <div id="sixty" class="kidsDec sixty">
                 <h1>'60s</h1>
                 <div class="decadeWrap">
                 <shows v-if="show.decade==='1960'" v-for="show in shows" v-on:click.native="newInfo(show); showContent()" :name="shows.name" :key="show.id" :shows="show"
@@ -56,7 +56,7 @@ export default {
                 </div>
                 </div>
 
-                <div id="seventy" class="seventy">
+                <div id="seventy" class="kidsDec seventy">
                 <h1>'70s</h1>
                 <div class="decadeWrap">
                 <shows v-if="show.decade==='1970'" v-for="show in shows" v-on:click.native="newInfo(show); showContent()" :name="shows.name" :key="show.id" :shows="show"
@@ -64,7 +64,7 @@ export default {
                 </div>
                 </div>
 
-                <div id="eighty" class="eighty">
+                <div id="eighty" class="kidsDec eighty">
                 <h1>'80s</h1>
                 <div class="decadeWrap">
                 <shows v-if="show.decade==='1980'" v-for="show in shows" v-on:click.native="newInfo(show); showContent()" :name="shows.name" :key="show.id" :shows="show"
@@ -72,7 +72,7 @@ export default {
                 </div>
                 </div>
 
-                <div id="ninety" class="ninety">
+                <div id="ninety" class="kidsDec ninety">
                 <h1>'90s</h1>
                 <div class="decadeWrap">
                 <shows v-if="show.decade==='1990'" v-for="show in shows" v-on:click.native="newInfo(show); showContent()" :name="shows.name" :key="show.id" :shows="show"

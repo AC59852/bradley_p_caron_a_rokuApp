@@ -74,7 +74,7 @@ import LoginFailComponent from "./components/LoginFailComponent.js";
         }
 
         if(localStorage.getItem("cachedMusic2")) {
-          localStorage.removeItem("cachedsongs2");
+          localStorage.removeItem("cachedMusic2");
         }
 
         if(localStorage.getItem("cachedMovies2")) {
