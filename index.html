@@ -38,8 +38,8 @@
               <li><a href="index.html#/profiles"><img src="images/roku.svg" alt="Roku logo"></a></li>
             </ul>
             <div>
-              <img src="images/profile.svg" alt="profile icon">
-              <img v-on:click="logout()" src="images/logout.svg" alt="logout button">
+              <img v-if="authenticated" src="images/profile.svg" alt="profile icon">
+              <img v-if="authenticated" v-on:click="logout()" src="images/logout.svg" alt="logout button">
             </div>
           </nav>
         </header>
