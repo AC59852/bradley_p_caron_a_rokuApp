@@ -1,4 +1,4 @@
-![Roku Flashback](public/images/roku_logo.svg)
+![Roku Flashback](images/roku_logo.svg)
 # Roku Flashback)
 
 ## Introduction
