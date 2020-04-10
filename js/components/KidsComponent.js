@@ -5,10 +5,10 @@ import KidsAudioComponent from "./kidsModules/KidsAudioComponent.js";
 // loop through the profiles and render each one
 export default {
     template: `
-    <div class="container">
+    <div class="container kidsCon">
     <nav class="bottomNav">
         <ul>
-            <li><a href="index.html#/users"><img src="./images/home.svg"></router-link></a></li>
+            <li><a href="index.html#/profiles"><img src="./images/home.svg"></router-link></a></li>
             <li @click="switchVideoComponent" class="btn1"><img src="./images/movie.svg"></li>
             <li @click="switchTvComponent" class="btn2"><img src="./images/tv.svg"></li>
             <li @click="switchAudioComponent" class="btn3"><img src="./images/music.svg"></li>
@@ -26,23 +26,24 @@ export default {
     },
 
     mounted() {
-        let bottomNav = document.querySelector(".bottomNav ul")
+
+        let bottomNav = document.querySelector(".bottomNav")
     $(".btn1").click(function() {
-        $('.movieWrapper').addClass("test2");
-        $('.movieWrapper').on("animationend", function () {
-            $('.movieWrapper').removeClass("test2");
+        $('.contentCon').addClass("test2");
+        $('.contentCon').on("animationend", function () {
+            $('.contentCon').removeClass("test2");
         });
     });
     $(".btn2").click(function() {
-        $('.movieWrapper').addClass("test2");
-        $('.movieWrapper').one("animationend", function () {
-            $('.movieWrapper').removeClass("test2");
+        $('.contentCon').addClass("test2");
+        $('.contentCon').one("animationend", function () {
+            $('.contentCon').removeClass("test2");
         });;
     });
     $(".btn3").click(function() {
-        $('.movieWrapper').addClass("test2");
-        $('.movieWrapper').one("animationend", function () {
-            $('.movieWrapper').removeClass("test2");
+        $('.contentCon').addClass("test2");
+        $('.contentCon').one("animationend", function () {
+            $('.contentCon').removeClass("test2");
         });;
     });
 

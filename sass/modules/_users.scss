@@ -1,4 +1,4 @@
-.profileWrapper {
+.profileWrap {
     display: flex;
     flex-direction: column;
     div {
@@ -12,8 +12,10 @@
                 font-size: 6vw;
             }
             img {
-                width: 50%;
+                display: flex;
+                width: 60%;
                 margin: 0 auto;
+                border: solid 2px $roku-purple;
             }
         }
     }

@@ -3,7 +3,7 @@
     h1 {
         text-align: center;
         border-bottom: 3px $roku-purple solid;
-        width: 35%;
+        width: 47%;
         text-transform: uppercase;
         margin: 0 auto;
         font-size: 12vw;
@@ -25,13 +25,14 @@
 
                 input {
                     margin-top: 5%;
-                    border-bottom: 2px solid $roku-purple;
+                    border-bottom: 4px solid $roku-purple;
                     border-top: none;
                     border-left: none;
                     border-right: none;
                     font-size: 5.5vw;
                     background-color: transparent;
                     color: white;
+                    filter: none;
                 }
 
                 input::placeholder {
